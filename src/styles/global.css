@@ -438,12 +438,15 @@ section{padding:7rem 3rem;}
 
 /* ── PROJECTS ── */
 #projects{background:var(--bg);}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:stretch;}
 .proj-card.wide{grid-column:1 / -1;}
 .proj-card{
   background:var(--card);border-radius:1rem;overflow:hidden;
   border:1px solid var(--border);transition:transform 0.3s,box-shadow 0.3s;
+  display:flex;flex-direction:column;
 }
+.proj-body{display:flex;flex-direction:column;flex:1;}
+.proj-desc{flex:1;}
 .proj-card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(13,110,79,0.12);}
 .proj-thumb{height:220px;position:relative;overflow:hidden;}
 /* Fix: Astro <Image /> needs explicit fill in carousel */
@@ -602,6 +605,16 @@ footer{background:var(--dark);padding:3rem 3rem 2rem;}
   filter:drop-shadow(0 1px 6px rgba(0,0,0,0.4));
 }
 .footer-name{letter-spacing:0.04em;}
+.footer-links{display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{
+  display:flex;align-items:center;gap:0.4rem;
+  color:rgba(253,246,236,0.45);font-size:0.8rem;font-weight:600;
+  text-decoration:none;letter-spacing:0.03em;
+  transition:color 0.2s;
+}
+.footer-link:hover{color:rgba(253,246,236,0.85);}
+.footer-link-accent{color:rgba(127,119,221,0.6);}
+.footer-link-accent:hover{color:rgba(160,153,238,0.95);}
 .footer-copy{
   color:rgba(253,246,236,0.2);font-size:0.75rem;
   letter-spacing:0.04em;

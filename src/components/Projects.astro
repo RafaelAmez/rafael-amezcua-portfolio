@@ -87,41 +87,57 @@ import clothesImg from '../assets/images/Clothes.jpg';
 
       <!-- Nymbus -->
       <div class="proj-card wide fade-in">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0d0d0d,#1a1a2e);height:220px;display:flex;align-items:center;justify-content:center;padding:2rem;gap:2rem;">
-          <div style="flex:1;max-width:420px;">
-            <div style="background:#141414;border:1px solid #222;border-radius:10px;overflow:hidden;">
-              <div style="background:#131313;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1e1e1e;">
-                <div style="display:flex;gap:6px;">
-                  <div style="width:8px;height:8px;border-radius:50%;background:#c46a6a;"></div>
-                  <div style="width:8px;height:8px;border-radius:50%;background:#d4a847;"></div>
-                  <div style="width:8px;height:8px;border-radius:50%;background:#5aad6a;"></div>
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#e8e8f4,#f0eeff);height:240px;display:flex;align-items:center;justify-content:center;padding:2rem;gap:2rem;position:relative;overflow:hidden;">
+          <div style="flex:1;max-width:480px;">
+            <div style="background:#fff;border:1px solid #ddd;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(127,119,221,0.15);">
+              <!-- Browser chrome -->
+              <div style="background:#f5f5f7;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e8e8e8;">
+                <div style="display:flex;gap:5px;">
+                  <div style="width:9px;height:9px;border-radius:50%;background:#ff5f57;"></div>
+                  <div style="width:9px;height:9px;border-radius:50%;background:#febc2e;"></div>
+                  <div style="width:9px;height:9px;border-radius:50%;background:#28c840;"></div>
                 </div>
-                <div style="display:flex;align-items:center;gap:6px;">
-                  <img src="/nymbus-logo.png" style="width:16px;height:16px;border-radius:4px;" alt="Nymbus" />
-                  <span style="font-size:10px;font-weight:bold;color:#7f77dd;letter-spacing:1px;">Nym<span style="color:#a099ee;">bus</span></span>
+                <div style="display:flex;align-items:center;gap:6px;background:#ebebeb;border-radius:6px;padding:3px 10px;">
+                  <img src="/nymbus-logo.png" style="width:13px;height:13px;border-radius:3px;" alt="Nymbus" />
+                  <span style="font-size:10px;color:#555;font-weight:600;">nymbus.pro</span>
+                </div>
+                <div style="width:60px;"></div>
+              </div>
+              <!-- Stats row -->
+              <div style="padding:12px 14px 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+                <div style="background:#f8f7ff;border:1px solid #e8e6ff;border-radius:8px;padding:8px 10px;">
+                  <div style="font-size:8px;color:#aaa;text-transform:uppercase;margin-bottom:3px;letter-spacing:0.05em;">Applications</div>
+                  <div id="nymbus-stat-total" style="font-size:18px;font-weight:800;color:#7f77dd;">—</div>
+                </div>
+                <div style="background:#fffbf0;border:1px solid #f0e8cc;border-radius:8px;padding:8px 10px;">
+                  <div style="font-size:8px;color:#aaa;text-transform:uppercase;margin-bottom:3px;letter-spacing:0.05em;">Interviews</div>
+                  <div id="nymbus-stat-interviews" style="font-size:18px;font-weight:800;color:#d4a847;">—</div>
+                </div>
+                <div style="background:#f0f8ff;border:1px solid #cce0f5;border-radius:8px;padding:8px 10px;">
+                  <div style="font-size:8px;color:#aaa;text-transform:uppercase;margin-bottom:3px;letter-spacing:0.05em;">Users</div>
+                  <div id="nymbus-stat-users" style="font-size:18px;font-weight:800;color:#6a9fd8;">Live</div>
                 </div>
               </div>
-              <div style="padding:1rem;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-                <div style="background:#1e1e1e;border-radius:6px;padding:8px 10px;">
-                  <div style="font-size:8px;color:#555;text-transform:uppercase;margin-bottom:4px;">Total</div>
-                  <div style="font-size:16px;font-weight:bold;color:#7f77dd;">12</div>
+              <!-- Table preview rows -->
+              <div style="padding:0 14px 10px;display:flex;flex-direction:column;gap:4px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:5px 8px;background:#fafafa;border-radius:6px;border-left:3px solid #d4a847;">
+                  <div style="width:20px;height:20px;border-radius:5px;background:#7f77dd;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:bold;color:#fff;flex-shrink:0;">P</div>
+                  <span style="font-size:10px;color:#333;font-weight:600;flex:1;">Precisely</span>
+                  <span style="font-size:9px;color:#6a9fd8;background:#e8f2fc;border-radius:10px;padding:1px 7px;">interview</span>
                 </div>
-                <div style="background:#1e1e1e;border-radius:6px;padding:8px 10px;">
-                  <div style="font-size:8px;color:#555;text-transform:uppercase;margin-bottom:4px;">Applied</div>
-                  <div style="font-size:16px;font-weight:bold;color:#d4a847;">7</div>
-                </div>
-                <div style="background:#1e1e1e;border-radius:6px;padding:8px 10px;">
-                  <div style="font-size:8px;color:#555;text-transform:uppercase;margin-bottom:4px;">Interview</div>
-                  <div style="font-size:16px;font-weight:bold;color:#6a9fd8;">3</div>
-                </div>
-                <div style="background:#1e1e1e;border-radius:6px;padding:8px 10px;">
-                  <div style="font-size:8px;color:#555;text-transform:uppercase;margin-bottom:4px;">Offers</div>
-                  <div style="font-size:16px;font-weight:bold;color:#5aad6a;">2</div>
+                <div style="display:flex;align-items:center;gap:8px;padding:5px 8px;background:#fafafa;border-radius:6px;border-left:3px solid #5aad6a;">
+                  <div style="width:20px;height:20px;border-radius:5px;background:#5aad6a;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:bold;color:#fff;flex-shrink:0;">M</div>
+                  <span style="font-size:10px;color:#333;font-weight:600;flex:1;">Mercury Health</span>
+                  <span style="font-size:9px;color:#5aad6a;background:#e8f5ec;border-radius:10px;padding:1px 7px;">offer</span>
                 </div>
               </div>
             </div>
           </div>
-          <div style="color:rgba(127,119,221,0.15);font-size:5rem;font-weight:900;letter-spacing:-4px;font-family:monospace;">&lt;/&gt;</div>
+          <!-- Live badge -->
+          <div style="position:absolute;top:14px;right:14px;display:flex;align-items:center;gap:5px;background:rgba(90,173,106,0.12);border:1px solid rgba(90,173,106,0.3);border-radius:20px;padding:4px 10px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#5aad6a;box-shadow:0 0 0 0 rgba(90,173,106,0.4);animation:pulse-dot 1.5s infinite;"></div>
+            <span style="font-size:10px;font-weight:700;color:#5aad6a;letter-spacing:0.05em;">LIVE</span>
+          </div>
         </div>
         <div class="proj-body">
           <div class="proj-tags">
@@ -144,11 +160,9 @@ import clothesImg from '../assets/images/Clothes.jpg';
             >View Live →</a>
           </div>
           <p class="proj-desc">
-            Built and launched a full-stack job application tracker used by real job seekers.
-            Node.js/Express backend, PostgreSQL database, JWT auth with email verification,
-            bcrypt, rate limiting, and a clean vanilla JS frontend. Features a Kanban board,
-            interview calendar, analytics dashboard, CSV export, PWA support, bookmarklet for
-            one-click saving from any job board, and mobile-first responsive design. Live at nymbus.pro.
+            <strong>Problem:</strong> Tracking job applications in a spreadsheet meant losing context, missing follow-ups, and no visibility into your pipeline.<br/>
+            <strong>Built:</strong> A full-stack PWA with Node.js/Express, PostgreSQL, JWT auth with email verification, Kanban board, interview calendar, analytics dashboard, CSV export, and a bookmarklet for one-click saving from any job board.<br/>
+            <strong>Result:</strong> Launched to real users — tracking <span id="nymbus-desc-total">hundreds of</span> applications across the platform.
           </p>
         </div>
       </div>
@@ -156,3 +170,29 @@ import clothesImg from '../assets/images/Clothes.jpg';
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes pulse-dot {
+    0% { box-shadow: 0 0 0 0 rgba(90,173,106,0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(90,173,106,0); }
+    100% { box-shadow: 0 0 0 0 rgba(90,173,106,0); }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    fetch('https://nymbus.pro/stats/public')
+      .then(r => r.json())
+      .then(data => {
+        const total = data.total || 0;
+        const interviews = data.interviews || 0;
+        const el = document.getElementById('nymbus-stat-total');
+        const eli = document.getElementById('nymbus-stat-interviews');
+        const eld = document.getElementById('nymbus-desc-total');
+        if (el) el.textContent = total.toLocaleString();
+        if (eli) eli.textContent = interviews.toLocaleString();
+        if (eld) eld.textContent = total.toLocaleString();
+      })
+      .catch(() => {});
+  })();
+</script>

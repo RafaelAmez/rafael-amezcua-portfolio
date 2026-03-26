@@ -297,12 +297,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       btn.textContent = open ? 'Show less ↑' : 'Read more ↓';
     };
 
-    // ── SKILL ACCORDION (mobile) ──
-    if (window.innerWidth <= 700) {
-      document.querySelectorAll('.skill-group-header').forEach(header => {
-        header.addEventListener('click', () => header.closest('.skill-group').classList.toggle('open'));
-      });
-    }
   </script>
 </body>
 </html>

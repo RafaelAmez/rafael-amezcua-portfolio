@@ -910,12 +910,13 @@ footer{background:var(--dark);padding:3rem 3rem 2rem;}
 
   /* Skills accordion */
   .skills-grid{grid-template-columns:1fr;gap:0;border-top:1px solid rgba(255,255,255,0.06);}
-  .skill-group{border-bottom:1px solid rgba(255,255,255,0.06);padding:0.9rem 0;}
-  .skill-group h3{cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:0;padding:0.2rem 0;font-size:0.75rem;}
-  .skill-group h3::after{content:'+';color:var(--muted);font-size:1rem;font-weight:300;}
-  .skill-group.open h3::after{content:'−';}
+  .skill-group{border-bottom:1px solid rgba(255,255,255,0.06);padding:1rem 1.1rem;border-radius:0;}
+  .skill-group-header{cursor:pointer;display:flex;align-items:center;gap:0.9rem;margin-bottom:0;position:relative;}
+  .skill-group-header::after{content:'+';color:var(--muted);font-size:1.1rem;font-weight:300;margin-left:auto;padding-left:0.5rem;flex-shrink:0;}
+  .skill-group.open .skill-group-header::after{content:'−';}
+  .skill-group-bar{display:none;}
   .skill-tags{max-height:0;overflow:hidden;transition:max-height 0.4s ease,margin-top 0.3s;}
-  .skill-group.open .skill-tags{max-height:220px;margin-top:0.85rem;}
+  .skill-group.open .skill-tags{max-height:300px;margin-top:1rem;}
 
   .resume-top{flex-direction:column;align-items:flex-start;}
   .contact-grid{gap:2.5rem;}

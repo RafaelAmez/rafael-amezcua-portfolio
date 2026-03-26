@@ -225,9 +225,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     });
 
     // ── SKILLS ACCORDION (mobile) ──
-    document.querySelectorAll('.skill-group h3').forEach(h3 => {
-      h3.addEventListener('click', () => {
-        h3.closest('.skill-group').classList.toggle('open');
+    document.querySelectorAll('.skill-group-header').forEach(header => {
+      header.addEventListener('click', () => {
+        header.closest('.skill-group').classList.toggle('open');
       });
     });
 
@@ -299,8 +299,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     // ── SKILL ACCORDION (mobile) ──
     if (window.innerWidth <= 700) {
-      document.querySelectorAll('.skill-group h3').forEach(h3 => {
-        h3.addEventListener('click', () => h3.parentElement.classList.toggle('open'));
+      document.querySelectorAll('.skill-group-header').forEach(header => {
+        header.addEventListener('click', () => header.closest('.skill-group').classList.toggle('open'));
       });
     }
   </script>

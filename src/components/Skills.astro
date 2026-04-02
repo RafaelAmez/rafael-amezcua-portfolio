@@ -1,4 +1,6 @@
 ---
+const COLOR = '12a372'; // theme green for all icons
+
 const groups = [
   {
     name: 'Marketing', level: 85,
@@ -12,7 +14,7 @@ const groups = [
   {
     name: 'Design', level: 78,
     skills: [
-      { name: 'Adobe Photoshop', icon: 'adobephotoshop' },
+      { name: 'Adobe Photoshop',   icon: 'adobephotoshop' },
       { name: 'Adobe Illustrator', icon: 'adobeillustrator' },
       { name: 'Logo Design' },
       { name: 'Visual Identity' },
@@ -30,31 +32,31 @@ const groups = [
   {
     name: 'Analytics', level: 74,
     skills: [
-      { name: 'Google Analytics', icon: 'googleanalytics' },
-      { name: 'SQL', icon: 'mysql' },
+      { name: 'Google Analytics', icon: 'googleanalytics4' },
+      { name: 'SQL',              icon: 'postgresql' },
       { name: 'Data Visualization' },
-      { name: 'Google Sheets', icon: 'googlesheets' },
+      { name: 'Google Sheets',   icon: 'googlesheets' },
     ]
   },
   {
     name: 'Tools', level: 80,
     skills: [
-      { name: 'Git & GitHub', icon: 'git' },
-      { name: 'ClickUp', icon: 'clickup' },
-      { name: 'Google Workspace', icon: 'google' },
-      { name: 'Slack', icon: 'slack' },
-      { name: 'Railway', icon: 'railway' },
+      { name: 'Git & GitHub',      icon: 'github' },
+      { name: 'ClickUp',           icon: 'clickup' },
+      { name: 'Google Workspace',  icon: 'google' },
+      { name: 'Slack',             icon: 'slack' },
+      { name: 'Railway',           icon: 'railway' },
     ]
   },
   {
     name: 'Technical', level: 73,
     skills: [
-      { name: 'Node.js', icon: 'nodedotjs' },
-      { name: 'PostgreSQL', icon: 'postgresql' },
-      { name: 'JavaScript', icon: 'javascript' },
-      { name: 'HTML / CSS', icon: 'html5' },
-      { name: 'Astro', icon: 'astro' },
-      { name: 'REST APIs' },
+      { name: 'Node.js',      icon: 'nodedotjs' },
+      { name: 'PostgreSQL',   icon: 'postgresql' },
+      { name: 'JavaScript',   icon: 'javascript' },
+      { name: 'HTML / CSS',   icon: 'html5' },
+      { name: 'Astro',        icon: 'astro' },
+      { name: 'REST APIs',    icon: 'swagger' },
     ]
   },
 ];
@@ -93,12 +95,13 @@ const groups = [
               <span class="skill-tag">
                 {s.icon && (
                   <img
-                    src={`https://cdn.simpleicons.org/${s.icon}`}
+                    src={`https://cdn.simpleicons.org/${s.icon}/${COLOR}`}
                     width="13"
                     height="13"
                     alt=""
                     loading="lazy"
                     class="skill-icon"
+                    onerror="this.style.display='none'"
                   />
                 )}
                 {s.name}

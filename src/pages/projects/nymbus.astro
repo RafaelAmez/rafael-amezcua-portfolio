@@ -1,0 +1,201 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="Nymbus Case Study — Rafael Amezcua"
+  description="How I built Nymbus: a full-stack PWA job tracker with a Kanban board, analytics dashboard, and six built-in AI tools to help job seekers get hired faster."
+  image="/nymbus-stock1.png"
+>
+  <Nav />
+
+  <div class="cs-page">
+
+    <a href="/#projects" class="cs-back">← Back to portfolio</a>
+
+    <!-- Tags -->
+    <div class="cs-page-tags">
+      <span class="tag">Full-Stack</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">PWA</span>
+      <span class="tag">Stripe</span>
+      <span class="tag">Claude API</span>
+    </div>
+
+    <!-- Title + description -->
+    <h1 class="cs-page-title">Nymbus</h1>
+    <p class="cs-page-desc">
+      Job search tracker with built-in AI tools. Track applications, beat the ATS, and get hired faster.
+    </p>
+
+    <!-- Meta row -->
+    <div class="cs-page-meta">
+      <span class="cs-page-meta-item">
+        <span class="cs-page-meta-label">Role:</span> Founder and Solo Developer
+      </span>
+      <span class="cs-page-meta-item">
+        <span class="cs-page-meta-label">Timeline:</span> 2024 to Present
+      </span>
+      <span class="cs-page-meta-item">
+        <span class="cs-page-meta-label">Status:</span> Live at nymbus.pro
+      </span>
+    </div>
+
+    <!-- Hero image -->
+    <div class="cs-hero-img">
+      <img src="/nymbus-stock1.png" alt="Nymbus dashboard" />
+    </div>
+
+    <!-- THE PROBLEM -->
+    <div class="cs-block">
+      <div class="cs-block-label">The Problem</div>
+      <div class="cs-block-body">
+        <p>
+          Job seekers have no visibility into why applications go nowhere. Spreadsheets do not tell you your ATS score, your ghost rate, or what is wrong with your resume.
+        </p>
+        <p>
+          Most applicants apply in bulk, get no feedback, and have no way to diagnose what is failing. The process is opaque by design, and generic tools like Excel were never built for this use case.
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- THE SOLUTION -->
+    <div class="cs-block">
+      <div class="cs-block-label">The Solution</div>
+      <div class="cs-block-body">
+        <p>
+          Nymbus is a full-stack PWA job tracker with a Kanban board, analytics dashboard, and six Arc AI tools built in: Resume Autopsy, ATS Score Checker, Resume Tailor, Cover Letter Generator, Interview Prep, and Salary Coach.
+        </p>
+        <p>
+          Users can track every application, visualize their pipeline health, and use AI to diagnose and fix what is holding them back, all in one place.
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- TARGET AUDIENCE -->
+    <div class="cs-block">
+      <div class="cs-block-label">Target Audience</div>
+      <div class="cs-block-body">
+        <p>College students, recent graduates, career changers, and veterans entering or re-entering the civilian job market.</p>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- TECH STACK -->
+    <div class="cs-block">
+      <div class="cs-block-label">Tech Stack</div>
+      <div class="cs-stack-chips">
+        <span class="cs-stack-chip">Node.js</span>
+        <span class="cs-stack-chip">Express</span>
+        <span class="cs-stack-chip">PostgreSQL</span>
+        <span class="cs-stack-chip">Railway</span>
+        <span class="cs-stack-chip">Vanilla JS</span>
+        <span class="cs-stack-chip">HTML / CSS</span>
+        <span class="cs-stack-chip">Stripe</span>
+        <span class="cs-stack-chip">Claude API</span>
+        <span class="cs-stack-chip">JWT Auth</span>
+        <span class="cs-stack-chip">Cloudflare CDN</span>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- KEY FEATURES -->
+    <div class="cs-block">
+      <div class="cs-block-label">Key Features</div>
+      <div class="cs-features-grid">
+        <div class="cs-feature-card">
+          <div class="cs-feature-title">Kanban Board</div>
+          <div class="cs-feature-desc">Drag and drop status updates across Applied, Interview, Offer, and Rejected columns.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-feature-title">Job Search Health Score</div>
+          <div class="cs-feature-desc">Tracks response rate, interview rate, ghost rate, and offer rate so you know exactly where your pipeline breaks.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-feature-title">Six Arc AI Tools</div>
+          <div class="cs-feature-desc">Resume Autopsy, ATS Score Checker, Resume Tailor, Cover Letter Generator, Interview Prep, and Salary Coach in one modal hub.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-feature-title">Chrome Extension</div>
+          <div class="cs-feature-desc">One-click job saving from any job board directly into your Nymbus pipeline.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-feature-title">Stripe Billing</div>
+          <div class="cs-feature-desc">Monthly and yearly Arc subscriptions with Stripe, giving power users access to all AI features.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-feature-title">Analytics Dashboard</div>
+          <div class="cs-feature-desc">Visual breakdown of application activity, interview funnel, and pipeline performance over time.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- TRACTION -->
+    <div class="cs-block">
+      <div class="cs-block-label">Traction</div>
+      <div class="cs-traction" id="cs-traction-grid">
+        <div class="cs-traction-stat">
+          <div class="cs-traction-num" id="cs-total-apps">...</div>
+          <div class="cs-traction-label">Applications tracked</div>
+        </div>
+        <div class="cs-traction-stat">
+          <div class="cs-traction-num" id="cs-total-users">...</div>
+          <div class="cs-traction-label">Verified users</div>
+        </div>
+        <div class="cs-traction-stat">
+          <div class="cs-traction-num" id="cs-total-interviews">...</div>
+          <div class="cs-traction-label">Interviews tracked</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- CTAs -->
+    <div class="cs-cta-row">
+      <a
+        href="https://nymbus.pro?utm_source=portfolio&utm_medium=referral&utm_campaign=rafael"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cs-cta-primary"
+      >Try Nymbus free →</a>
+      <a href="/#projects" class="cs-cta-secondary">← Back to portfolio</a>
+    </div>
+
+  </div>
+
+  <Footer />
+</Layout>
+
+<script is:inline>
+  (function () {
+    fetch('https://nymbus.pro/stats/public')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var appsEl = document.getElementById('cs-total-apps');
+        var usersEl = document.getElementById('cs-total-users');
+        var intEl = document.getElementById('cs-total-interviews');
+        if (appsEl) appsEl.textContent = (data.total || 0).toLocaleString();
+        if (usersEl) usersEl.textContent = (data.users || 0).toLocaleString();
+        if (intEl) intEl.textContent = (data.interviews || 0).toLocaleString();
+      })
+      .catch(function() {
+        ['cs-total-apps','cs-total-users','cs-total-interviews'].forEach(function(id){
+          var el = document.getElementById(id);
+          if (el) el.textContent = '...';
+        });
+      });
+  })();
+</script>

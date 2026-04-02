@@ -449,6 +449,23 @@ body{font-family:var(--font);background:var(--bg);color:var(--dark);overflow-x:h
   background:rgba(18,163,114,0.07);
 }
 
+/* Credential badges row */
+.hero-credentials{
+  display:flex;flex-wrap:wrap;gap:0.45rem;
+  margin-top:1.8rem;align-items:center;
+}
+.cred-badge{
+  display:inline-flex;align-items:center;
+  background:rgba(18,163,114,0.1);
+  border:1px solid rgba(18,163,114,0.3);
+  color:var(--terra2);
+  padding:0.3rem 0.85rem;border-radius:2rem;
+  font-size:0.68rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  white-space:nowrap;
+  opacity:0;animation:fadeInScroll 0.7s 3.2s forwards;
+}
+
 /* Stats row */
 .hero-stats{
   display:flex;align-items:center;gap:1.6rem;
@@ -466,6 +483,105 @@ body{font-family:var(--font);background:var(--bg);color:var(--dark);overflow-x:h
   letter-spacing:0.1em;text-transform:uppercase;
 }
 .hero-stat-divider{width:1px;height:28px;background:rgba(255,255,255,0.12);}
+
+/* ── HERO FX / EXPLOSION ANIMATION ── */
+/* Fixed so #hero overflow:hidden never clips arcs or bolts */
+#hero > .hero-fx-wrap{
+  position:fixed;
+  left:50%;top:26vh;
+  width:0;height:0;
+  z-index:2;pointer-events:none;
+}
+#heroFxCanvas{
+  position:fixed;top:0;left:0;
+  width:100vw;height:100vh;
+  z-index:1;pointer-events:none;
+}
+/* Arc wrappers — transform-origin 0,0 so rotation spins arc around center anchor */
+.fx-arc{
+  position:absolute;top:0;left:0;
+  pointer-events:none;
+  transform-origin:0 0;
+  will-change:transform;
+}
+.fx-arc svg{position:absolute;top:0;left:0;overflow:visible;pointer-events:none;}
+/* JS drives all arc rotation + radius + color — no CSS spin here */
+/* Orb — 240px */
+.hero-logo-orb{
+  position:absolute;
+  width:240px;height:240px;
+  top:0;left:0;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle at 50% 50%,#0d1f16 0%,#050e08 100%);
+  border:1.5px solid rgba(255,255,255,0.15);
+  display:flex;align-items:center;justify-content:center;
+  overflow:visible;
+  opacity:0;
+  will-change:opacity,transform;
+}
+.orb-breathing{animation:orbBreath 3s ease-in-out infinite;}
+@keyframes orbBreath{
+  0%,100%{box-shadow:0 0 16px rgba(18,163,114,0.22),0 0 48px rgba(18,163,114,0.08);}
+  50%    {box-shadow:0 0 36px rgba(18,163,114,0.52),0 0 90px rgba(18,163,114,0.18);}
+}
+/* Logo — chromatic aberration flicker */
+.hero-headshot{
+  width:128px;height:128px;
+  object-fit:contain;pointer-events:none;
+  filter:brightness(0) invert(1);
+  transform-origin:center;
+  will-change:transform,opacity;
+}
+/* Shockwave rings — two fire on load with offset */
+.fx-shockwave{
+  position:absolute;top:0;left:0;
+  width:4px;height:4px;border-radius:50%;
+  transform:translate(-50%,-50%) scale(0);
+  border:2px solid rgba(18,163,114,0.95);
+  pointer-events:none;opacity:0;
+}
+.fx-shockwave.fire{animation:swBoom 0.9s cubic-bezier(0.05,0.85,0.25,1) forwards;}
+@keyframes swBoom{
+  0%  {transform:translate(-50%,-50%) scale(0);opacity:1;}
+  25% {opacity:0.65;}
+  100%{transform:translate(-50%,-50%) scale(240);opacity:0;}
+}
+/* Sonar rings — continuous ambient pulse */
+.hero-sonar-ring{
+  position:absolute;top:0;left:0;
+  border-radius:50%;pointer-events:none;
+  border:1px solid rgba(18,163,114,0.28);
+  width:260px;height:260px;
+  transform:translate(-50%,-50%);
+}
+.sonar-1{animation:sonarExpand 2.8s ease-out 0.6s infinite;}
+.sonar-2{animation:sonarExpand 2.8s ease-out 1.9s infinite;}
+@keyframes sonarExpand{
+  0%  {transform:translate(-50%,-50%) scale(1);opacity:0.4;}
+  100%{transform:translate(-50%,-50%) scale(1.85);opacity:0;}
+}
+@media(max-width:700px){#hero>.hero-fx-wrap,#heroFxCanvas{display:none;}}
+
+/* ── TRY NYMBUS NAV BTN ── */
+.try-nymbus-nav-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(18,163,114,0.12);
+  border:1px solid rgba(18,163,114,0.3);
+  color:var(--terra2);
+  padding:0.38rem 0.9rem;border-radius:2rem;
+  font-size:0.75rem;font-weight:700;letter-spacing:0.04em;
+  text-decoration:none;white-space:nowrap;
+  transition:background 0.2s,border-color 0.2s,color 0.2s;
+}
+.try-nymbus-nav-btn:hover{
+  background:rgba(18,163,114,0.22);
+  border-color:var(--terra2);
+  color:#fff;
+}
+#navbar.scrolled .try-nymbus-nav-btn{
+  padding:0.3rem 0.7rem;font-size:0.7rem;
+}
 
 /* ── SHARED ── */
 section{padding:7rem 3rem;}
@@ -543,17 +659,21 @@ section{padding:7rem 3rem;}
 }
 .proj-panel-img>img{
   width:100%;height:100%;object-fit:contain;
-  object-position:center center;display:block;
+  object-position:top center;display:block;
   flex:1;min-height:0;
 }
+.nymbus-video-pane iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;border:none;display:block;
+}
 /* Cycle Care carousel inside panel */
-.cc-panel-img{background:linear-gradient(135deg,#0e1e12,#1a3020);position:relative;}
+.cc-panel-img{background:linear-gradient(135deg,#0e1e12,#1a3020);position:relative;overflow:hidden;}
 .cc-panel-img .carousel-track{
   position:absolute;inset:0;
   display:flex;width:100%;height:100%;transition:transform 0.4s ease;
   will-change:transform;
 }
-.cc-panel-img .carousel-slide{flex:0 0 100%;width:100%;height:100%;overflow:hidden;flex-shrink:0;}
+.cc-panel-img .carousel-slide{flex:0 0 100%;width:100%;height:100%;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
 .cc-panel-img .carousel-slide img{width:100%;height:100%;object-fit:cover;display:block;}
 .carousel-btn{
   position:absolute;top:50%;transform:translateY(-50%);

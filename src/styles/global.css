@@ -669,7 +669,7 @@ section{padding:7rem 3rem;}
 /* Intertwine Fitness adaptive carousel */
 .if-panel-img{
   position:relative;overflow:hidden;background:#0a0a0a;
-  min-height:unset;aspect-ratio:1600/1000;
+  min-height:unset;aspect-ratio:1871/1147;
   transition:aspect-ratio 0.35s ease;
 }
 .if-slide{
@@ -696,10 +696,8 @@ section{padding:7rem 3rem;}
   font-family:monospace;white-space:nowrap;overflow:hidden;
 }
 .if-browser-viewport{flex:1;overflow:hidden;position:relative;}
-.if-browser-viewport iframe{
-  position:absolute;top:0;left:0;
-  border:none;pointer-events:none;
-  transform-origin:top left;
+.if-browser-viewport img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
 }
 
 /* Cycle Care carousel inside panel */

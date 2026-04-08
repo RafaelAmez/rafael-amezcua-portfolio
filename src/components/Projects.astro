@@ -67,8 +67,8 @@ import clothesImg from '../assets/images/Clothes.jpg';
       <div class="proj-panel" id="panel-intertwine">
         <div class="proj-panel-img if-panel-img" id="if-carousel">
 
-          <!-- Slide 0: live website preview -->
-          <div class="if-slide active" data-ratio="1600/1000">
+          <!-- Slide 0: website screenshot in browser chrome -->
+          <div class="if-slide active" data-ratio="1871/1147">
             <div class="if-browser-mock">
               <div class="if-browser-bar">
                 <div class="if-browser-dots">
@@ -79,13 +79,7 @@ import clothesImg from '../assets/images/Clothes.jpg';
                 <div class="if-browser-url">intertwinefitness.com</div>
               </div>
               <div class="if-browser-viewport">
-                <iframe
-                  src="https://www.intertwinefitness.com"
-                  title="Intertwine Fitness website preview"
-                  loading="lazy"
-                  scrolling="no"
-                  tabindex="-1"
-                ></iframe>
+                <img src="/if-1.png" alt="Intertwine Fitness website" />
               </div>
             </div>
           </div>
@@ -205,27 +199,6 @@ import clothesImg from '../assets/images/Clothes.jpg';
     var total = carousel.querySelectorAll('.if-slide').length;
     goIF((ifIdx + dir + total) % total);
   }
-
-  // Scale the preview iframe to exactly fill its viewport with no whitespace
-  function scaleIFIframe() {
-    var viewport = document.querySelector('.if-browser-viewport');
-    var iframe = document.querySelector('.if-browser-viewport iframe');
-    if (!viewport || !iframe) return;
-    var vw = viewport.offsetWidth;
-    var vh = viewport.offsetHeight;
-    if (!vw || !vh) return;
-    var simW = 1440; // desktop viewport to simulate
-    var scale = vw / simW;
-    var simH = Math.round(vh / scale);
-    iframe.style.width  = simW + 'px';
-    iframe.style.height = simH + 'px';
-    iframe.style.transform = 'scale(' + scale + ')';
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    scaleIFIframe();
-  });
-  window.addEventListener('resize', scaleIFIframe);
 
   (function () {
     fetch('https://nymbus.pro/stats/public')
